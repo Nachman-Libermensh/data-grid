@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master] # שנה ל"master" אם זה הענף שלך
+    branches: [master]
 
 permissions:
   contents: write

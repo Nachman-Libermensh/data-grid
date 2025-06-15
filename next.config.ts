@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  output: "export", // מאפשר יצוא סטטי (next export)
-  basePath: "/data-grid", // שם הריפו שלך ב־GitHub
-  trailingSlash: true, // דרוש ל־GitHub Pages כדי שכל route יהיה index.html
+  output: "export",
+  basePath: isProd ? "/data-grid" : "", // basePath רק בפרודקשן
+  trailingSlash: true,
 };
 
 export default nextConfig;
