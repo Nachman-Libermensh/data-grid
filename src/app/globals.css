@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@import "rizzui/dist/rizzui.css"; /* הוסף את זה */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -26,63 +27,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme {
-  /* קונפיגורציה עבור RizzUI */
-  --color-background: white;
-  --color-foreground: rgb(75 85 99); /* gray-600 */
-  --color-muted: rgb(229 231 235); /* gray-200 */
-
-  /* Primary colors */
-  --color-primary-lighter: rgb(229 231 235); /* gray-200 */
-  --color-primary: rgb(31 41 55); /* gray-800 */
-  --color-primary-dark: rgb(3 7 18); /* gray-950 */
-  --color-primary-foreground: white;
-
-  /* Secondary colors */
-  --color-secondary-lighter: rgb(199 210 254); /* indigo-200 */
-  --color-secondary: rgb(99 102 241); /* indigo-500 */
-  --color-secondary-dark: rgb(67 56 202); /* indigo-700 */
-  --color-secondary-foreground: white;
-
-  /* Danger colors */
-  --color-red-lighter: rgb(254 205 211); /* rose-200 */
-  --color-red: rgb(244 63 94); /* rose-500 */
-  --color-red-dark: rgb(190 18 60); /* rose-700 */
-
-  /* Warning colors */
-  --color-orange-lighter: rgb(253 230 138); /* amber-200 */
-  --color-orange: rgb(245 158 11); /* amber-500 */
-  --color-orange-dark: rgb(180 83 9); /* amber-700 */
-
-  /* Info colors */
-  --color-blue-lighter: rgb(186 230 253); /* sky-200 */
-  --color-blue: rgb(14 165 233); /* sky-500 */
-  --color-blue-dark: rgb(3 105 161); /* sky-700 */
-
-  /* Success colors */
-  --color-green-lighter: rgb(167 243 208); /* emerald-200 */
-  --color-green: rgb(16 185 129); /* emerald-500 */
-  --color-green-dark: rgb(4 120 87); /* emerald-700 */
-
   /* פונטים */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
