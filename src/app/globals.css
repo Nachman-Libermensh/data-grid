@@ -3,32 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* צבעי רקע עדינים */
+  --background: #fdfcfb;
+  --background-soft: #f8f6f3;
+  --background-card: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* צבעי טקסט */
+  --foreground: #2d2a26;
+  --foreground-muted: #6b645c;
+  --foreground-soft: #8b8680;
+
+  /* צבעי אקסנט רומנטיים */
+  --primary: #d4a574;
+  --primary-light: #e8c4a0;
+  --primary-dark: #b8935f;
+
+  /* צבעי משלימים */
+  --secondary: #a8b5d1;
+  --accent: #e8d5c4;
+  --muted: #f1ece6;
+  --border: #e6ddd4;
+
+  /* צללים עדינים */
+  --shadow-soft: 0 2px 12px rgba(212, 165, 116, 0.08);
+  --shadow-medium: 0 4px 20px rgba(212, 165, 116, 0.12);
+  --shadow-strong: 0 8px 30px rgba(212, 165, 116, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1816;
+    --background-soft: #221f1c;
+    --background-card: #2a2622;
+    --foreground: #f5f1eb;
+    --foreground-muted: #c4beb6;
+    --foreground-soft: #a49d94;
+    --muted: #332e2a;
+    --border: #3d362f;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(
+      135deg,
+      theme("colors.background.DEFAULT") 0%,
+      theme("colors.background.soft") 100%
+    );
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    min-height: 100vh;
+  }
 }
 
-@theme {
-  /* פונטים */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-soft;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-light rounded-sm;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
 }
